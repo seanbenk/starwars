@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import { useState } from "react";
+import "../styles/globals.css";
+import AppContext from "../context/AppContext";
+
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const [context, setContext] = useState({ favourites: [] });
+
+  return (
+    <AppContext.Provider value={[context, setContext]}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppContext.Provider>
+  );
 }
 
-export default MyApp
+export default MyApp;
