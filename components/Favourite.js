@@ -4,7 +4,9 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import AppContext from "../context/AppContext";
 
-function Favourite({ title }) {
+import styles from "../styles/Favourite.module.scss";
+
+function Favourite({ title, size }) {
   const [context, setContext] = useContext(AppContext);
 
   const setFavourites = () => {
@@ -23,16 +25,14 @@ function Favourite({ title }) {
     });
   };
   return (
-    <div onClick={setFavourites}>
+    <div onClick={setFavourites} className={styles.container}>
       {context.favourites.includes(title) ? (
-        <FavoriteIcon color="#000" />
+        <FavoriteIcon color="#000" fontSize="large" />
       ) : (
-        <FavoriteBorderIcon color="#000" />
+        <FavoriteBorderIcon color="#000" fontSize="large" />
       )}
     </div>
   );
 }
-
-const setFavouritesContext = () => {};
 
 export default Favourite;

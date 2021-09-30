@@ -3,6 +3,30 @@
 .container {
   height: 100%;
   width: 100%;
-  border: 1px solid $dark;
-  padding: 20px;
+  padding: 10px;
+  background-color: $light;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  position: relative;
+  border: 1px solid $secondary;
+  border-radius: 8px;
+  transition: all 0.2s linear;
+  background-color: $dark;
+  font-family: $font;
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  h2 {
+    color: $primary;
+    letter-spacing: 2px;
+    padding: 10px 0;
+    margin: 0;
+  }
+  h3 {
+    color: $secondary;
+    margin: 0;
+    padding: 10px 0;
+  }
 }

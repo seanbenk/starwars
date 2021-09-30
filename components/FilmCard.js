@@ -8,14 +8,11 @@ function FilmCard({ film }) {
   return (
     <article className={styles.container}>
       <Favourite title={film.title} />
-      <Link
-        href={{
-          pathname: "/film/[id]",
-          query: { id: film.episode_id, url: film.url },
-        }}
-        as={`/film/${film.episode_id}`}
-      >
-        {film.title}
+      <Link href="/films/[id]" as={`/films/${film.url[film.url.length - 2]}`}>
+        <div>
+          <h2>{film.title}</h2>
+          <h3>Episode {film.episode_id}</h3>
+        </div>
       </Link>
     </article>
   );

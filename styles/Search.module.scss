@@ -1,0 +1,20 @@
+@import "./config.scss";
+
+.container {
+  color: $primary;
+  border: none;
+  border-bottom: 5px double $secondary;
+  border-radius: 5px;
+  background: none;
+  padding: none;
+  padding-left: 10px;
+  outline: none;
+  font-size: 2rem;
+  font-family: $font;
+  margin-bottom: 30px;
+  width: 50%;
+  &::placeholder {
+    color: $primary;
+    opacity: 0.5;
+  }
+}
