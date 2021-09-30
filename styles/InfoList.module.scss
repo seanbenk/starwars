@@ -1,0 +1,13 @@
+@import "./config.scss";
+
+.container {
+  h1 {
+    font-family: $font;
+    letter-spacing: 2px;
+  }
+  ul {
+    li {
+      list-style: none;
+    }
+  }
+}
