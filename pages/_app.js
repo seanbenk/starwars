@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import AppContext from "../context/AppContext";
 
 import Layout from "../components/Layout";

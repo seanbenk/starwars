@@ -1,0 +1,9 @@
+@import "../config.scss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+}
