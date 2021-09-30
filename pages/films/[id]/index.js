@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+
 import Character from "../../../components/character/Character";
 import InfoList from "../../../components/InfoList";
-
 import styles from "../../../styles/pages/FilmDetails.module.scss";
 
 function FilmDetailsPage({ film }) {
@@ -65,30 +65,9 @@ export default FilmDetailsPage;
 export const getServerSideProps = async (context) => {
   const res = await fetch(`https://swapi.dev/api/films/${context.params.id}`);
   const film = await res.json();
-  // const characters = [];
-  // const planets = [];
-  // const starships = [];
-  // const vehicles = [];
-  // const species = [];
-  // for (const url of film.characters) {
-  //   const res = await fetch(url);
-  //   const character = await res.json();
-  //   characters.push(character);
-  // }
   return {
     props: {
       film,
-      // characters,
     },
   };
 };
-
-// const getCharacters = async (film) => {
-//   const characters = [];
-//   for (const character of film.characters) {
-//     const res = await fetch(character);
-//     const data = await res.json();
-//     characters.push(data);
-//   }
-//   return characters;
-// };

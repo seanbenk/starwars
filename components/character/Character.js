@@ -1,6 +1,6 @@
 import React from "react";
 import { Tooltip } from "@mui/material";
-import CharacterTooltip, { tooltipClasses } from "./CharacterTooltip";
+import CharacterTooltip from "./CharacterTooltip";
 
 function Character({ character }) {
   return (
