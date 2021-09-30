@@ -1,3 +1,7 @@
+### Link:
+
+https://starwars-six.vercel.app/
+
 Challenge:
 
 Consume the Star Wars API (SWAPI) using React, NextJS and other JS technologies you deem fit.
