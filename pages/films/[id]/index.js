@@ -1,16 +1,23 @@
 import React from "react";
+import Character from "../../../components/character/Character";
 
 import styles from "../../../styles/pages/FilmDetails.module.scss";
 
-function FilmDetailsPage({ film }) {
-  console.log(film);
+function FilmDetailsPage({ film, characters }) {
   return (
     <div className={styles.container}>
-      <h1>{film.title}</h1>
-      <h2>Episode {film.episode_id}</h2>
-      <p>Director: {film.director}</p>
-      <p>Producer: {film.producer}</p>
-      <p>release date: {film.release_date}</p>
+      <div className="base-infomation-container">
+        <h1>{film.title}</h1>
+        <h2>Episode {film.episode_id}</h2>
+        <p>Director: {film.director}</p>
+        <p>Producer: {film.producer}</p>
+        <p>release date: {film.release_date}</p>
+      </div>
+      <div className={styles.charactersContainer}>
+        {characters.map((character) => (
+          <Character character={character} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -20,9 +27,16 @@ export default FilmDetailsPage;
 export const getServerSideProps = async (context) => {
   const res = await fetch(`https://swapi.dev/api/films/${context.params.id}`);
   const film = await res.json();
+  const characters = [];
+  for (const url of film.characters) {
+    const res = await fetch(url);
+    const character = await res.json();
+    characters.push(character);
+  }
   return {
     props: {
       film,
+      characters,
     },
   };
 };
