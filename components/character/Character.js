@@ -4,12 +4,7 @@ import CharacterTooltip from "./CharacterTooltip";
 
 function Character({ character }) {
   return (
-    <Tooltip
-      arrow
-      className={styles.container}
-      title={<CharacterTooltip character={character} />}
-      style={{ ho }}
-    >
+    <Tooltip arrow title={<CharacterTooltip character={character} />}>
       <h3>{character.name}</h3>
     </Tooltip>
   );

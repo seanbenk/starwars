@@ -6,7 +6,7 @@ import styles from "../../../styles/pages/FilmDetails.module.scss";
 function FilmDetailsPage({ film, characters }) {
   return (
     <div className={styles.container}>
-      <div className="base-infomation-container">
+      <div>
         <h1>{film.title}</h1>
         <h2>Episode {film.episode_id}</h2>
         <p>Director: {film.director}</p>
