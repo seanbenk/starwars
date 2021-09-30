@@ -14,8 +14,8 @@ function FilmDetailsPage({ film, characters }) {
         <p>release date: {film.release_date}</p>
       </div>
       <div className={styles.charactersContainer}>
-        {characters.map((character) => (
-          <Character character={character} />
+        {characters.map((character, idx) => (
+          <Character character={character} key={idx} />
         ))}
       </div>
     </div>
@@ -28,6 +28,10 @@ export const getServerSideProps = async (context) => {
   const res = await fetch(`https://swapi.dev/api/films/${context.params.id}`);
   const film = await res.json();
   const characters = [];
+  // const planets = [];
+  // const starships = [];
+  // const vehicles = [];
+  // const species = [];
   for (const url of film.characters) {
     const res = await fetch(url);
     const character = await res.json();

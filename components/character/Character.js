@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tooltip } from "@mui/material";
 import CharacterTooltip from "./CharacterTooltip";
-import styles from "../../styles/character/Character.module.scss";
 
 function Character({ character }) {
   return (
@@ -9,6 +8,7 @@ function Character({ character }) {
       arrow
       className={styles.container}
       title={<CharacterTooltip character={character} />}
+      style={{ ho }}
     >
       <h3>{character.name}</h3>
     </Tooltip>
